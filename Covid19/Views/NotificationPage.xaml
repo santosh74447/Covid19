@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Covid19.Views.NotificationPage"
+             Title="Covid19 Notifications">
+    <ContentPage.ToolbarItems>
+    <ToolbarItem Text="Home"
+                 x:Name="btnHome"
+                 IconImageSource="home.png"
+                 Order="Primary"
+                 Priority="0"
+                 Clicked="btnHome_Clicked"/>
+</ContentPage.ToolbarItems>
+      <ContentPage.Content>
+
+
+        <StackLayout Orientation="Vertical">
+        <StackLayout Orientation="Vertical"
+                      x:Name="layoutMain">
+            <Frame>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="All Notifications"
+                        HeightRequest="20"
+                        FontAttributes="Bold"
+                        FontSize="Small"
+                        Margin="0,0,0,0"/>
+                <ImageButton
+                        x:Name="btnOptions"
+                        HeightRequest="20"
+                        Source="options.png"
+                        BackgroundColor="Transparent"
+                        HorizontalOptions="EndAndExpand"
+                        Clicked="btnOptions_Clicked"/>
+            </StackLayout>
+        </Frame>
+            <Label   x:Name="lblNotificationStatus"
+                     Text="No New Notifications!!"
+                     HorizontalOptions="CenterAndExpand"
+                     IsVisible="false"
+                        HeightRequest="20"
+                        FontAttributes="Bold"
+                        FontSize="Small"
+                        Margin="0,200,0,0"/>
+                <ListView x:Name="NotificationsListView"
+                    ItemsSource="{Binding notificationList}" HasUnevenRows="True" IsPullToRefreshEnabled="True" 
+                  IsRefreshing="{Binding IsRefreshing}" RefreshCommand="{Binding RefreshData}"
+                          SelectedItem="{Binding SelectedNotification,Mode=TwoWay}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                             
+        <Frame Margin="0,10,0,0">
+            
+                <Frame.Padding>
+                <OnPlatform x:TypeArguments="Thickness">
+                    <On Platform="iOS" Value="0,10,0,15" />
+                    <On Platform="android" Value="0,0,0,0"/>
+                </OnPlatform>
+                </Frame.Padding>
+            <StackLayout Orientation="Horizontal" >
+                <Image Source="{Binding Flag}"
+                    HeightRequest="20"
+                    WidthRequest="50"
+                    Margin="2,2,0,0"/>
+                <StackLayout Orientation="Vertical">
+                    <Label Text="{Binding NDescription,StringFormat='{0}'}"
+                            FontAttributes="{Binding IsReadType}"
+                           TextColor="Black"
+                            FontSize="Medium"
+                            VerticalOptions="CenterAndExpand"
+                            HorizontalOptions="Center">
+                            <Label.Margin>
+                            <OnPlatform x:TypeArguments="Thickness">
+                                <On Platform="iOS" Value="10,-5,-30,-30" />
+                                <On Platform="android" Value="10,-5,-20,0"/>
+                            </OnPlatform>
+                            </Label.Margin>
+                    </Label>
+                    <Label x:Name="lblCreatedDate"
+                            Text="{Binding NCreatedDate,StringFormat='As of {0}'}"
+                            HorizontalTextAlignment="End"
+                            VerticalTextAlignment="End"
+                            HorizontalOptions="EndAndExpand"
+                            VerticalOptions="EndAndExpand"
+                            FontSize="10">
+                            <Label.Margin>
+                            <OnPlatform x:TypeArguments="Thickness">
+                                <On Platform="iOS" Value="0,10,0,0" />
+                                <On Platform="android" Value="0,-40,0,0"/>
+                            </OnPlatform>
+                            </Label.Margin>
+                    </Label>
+                </StackLayout>
+            </StackLayout>
+                                
+        </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackLayout>
+        <StackLayout Orientation="Vertical"
+                     IsVisible="false"
+                     x:Name="layoutNoWifi">
+            <Image Source="nowifi.png"
+                   VerticalOptions="FillAndExpand"
+                   HorizontalOptions="FillAndExpand"></Image>
+        </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

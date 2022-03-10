@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="About US"
+             x:Class="Covid19.Views.AboutPage">
+    <ContentPage.Content>
+        <ScrollView>
+        <StackLayout>
+        <Frame>
+        <StackLayout Orientation="Vertical">
+            <Label Text="Developer Details"
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="CenterAndExpand"
+                       FontSize="Large"
+                    FontAttributes="Bold"
+                   />
+
+                  <BoxView HeightRequest="2"
+                           Margin="0,-5,0,10"
+                           BackgroundColor="Black"
+                           HorizontalOptions="FillAndExpand" />
+            <StackLayout Orientation="Vertical">
+                  <Label
+                      Text="Developed By: Santosh Jayswal"
+                        VerticalOptions="StartAndExpand"
+                        HorizontalOptions="StartAndExpand"
+                        Margin="0,0,0,0"/>
+                 <Label 
+                        Text="Developed Using Xamarin and NovelCovid API"
+                        VerticalOptions="StartAndExpand"
+                        HorizontalOptions="StartAndExpand"
+                        Margin="0,0,0,0"/>
+            </StackLayout>
+
+        </StackLayout>
+            </Frame>
+        <Frame>
+        <StackLayout Orientation="Vertical">
+            <Label Text="Data Sources"
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="CenterAndExpand"
+                       FontSize="Large"
+                    FontAttributes="Bold"
+                   />
+
+                  <BoxView HeightRequest="2"
+                           Margin="0,-5,0,10"
+                           BackgroundColor="Black"
+                           HorizontalOptions="FillAndExpand" />
+            
+                  <Label 
+                      Text="API Source: "
+                    FontAttributes="Bold"
+                        VerticalOptions="Start"
+                        HorizontalOptions="StartAndExpand"
+                        Margin="0,-8,0,0"/>
+            <Label 
+                      Text="https://github.com/novelcovid/api"
+                        TextColor="Green"
+                        VerticalOptions="Start"
+                        HorizontalOptions="StartAndExpand"
+                        Margin="0,-8,0,0"/>
+            <StackLayout Orientation="Vertical">
+                  <Label 
+                      Text="Data Source"
+                    FontAttributes="Bold"
+                        VerticalOptions="StartAndExpand"
+                        HorizontalOptions="StartAndExpand"
+                        Margin="0,0,0,0"/>
+            <Label 
+                      Text="https://www.worldometers.info/coronavirus/"
+                        TextColor="Green"
+                        VerticalOptions="Start"
+                        HorizontalOptions="StartAndExpand"
+                        Margin="0,-8,0,0"/>
+            <Label 
+                      Text="https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_time_series"
+                        TextColor="Green"
+                        VerticalOptions="Start"
+                        HorizontalOptions="StartAndExpand"
+                        Margin="0,-2,0,0"/>
+            </StackLayout>
+            <StackLayout Orientation="Vertical">
+                  <Label 
+                      Text="Url Used in the Application"
+                    FontAttributes="Bold"
+                        VerticalOptions="StartAndExpand"
+                        HorizontalOptions="StartAndExpand"
+                        Margin="0,0,0,0"/>
+            <Label 
+                      Text="https://corona.lmao.ninja/v2/countries"
+                        TextColor="Green"
+                        VerticalOptions="Start"
+                        HorizontalOptions="StartAndExpand"
+                        Margin="0,-8,0,0"/>
+            <Label 
+                      Text="https://corona.lmao.ninja/v2/all"
+                        TextColor="Green"
+                        VerticalOptions="Start"
+                        HorizontalOptions="StartAndExpand"
+                        Margin="0,-2,0,0"/>
+            <Label 
+                      Text="https://corona.lmao.ninja/v2/historical"
+                        TextColor="Green"
+                        VerticalOptions="Start"
+                        HorizontalOptions="StartAndExpand"
+                        Margin="0,-2,0,0"/>
+            <Label 
+                      Text="https://corona.lmao.ninja/v2/historical/{Country}"
+                        TextColor="Green"
+                        VerticalOptions="Start"
+                        HorizontalOptions="StartAndExpand"
+                        Margin="0,-2,0,0"/>
+            </StackLayout>
+            <StackLayout Orientation="Vertical">
+                  <Label 
+                      Text="Licensing"
+                    FontAttributes="Bold"
+                        VerticalOptions="StartAndExpand"
+                        HorizontalOptions="StartAndExpand"
+                        Margin="0,0,0,0"/>
+            <Label 
+                      Text="https://github.com/NovelCOVID/API/blob/master/LICENSE"
+                        TextColor="Green"
+                        VerticalOptions="Start"
+                        HorizontalOptions="StartAndExpand"
+                        Margin="0,-8,0,0"/>
+                </StackLayout>
+
+        </StackLayout>
+            </Frame>
+    </StackLayout>
+            </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Covid19.Views.TotalPage">
+    <ContentPage.ToolbarItems>
+
+    <ToolbarItem Text="Setting"
+                 x:Name="btnSetting"
+                 IconImageSource="share.png"
+                 Order="Primary"
+                 Priority="0"
+                 Clicked="btnShare_Clicked"/>
+    <ToolbarItem Text="Notification"
+                 x:Name="btnNotification"
+                 IconImageSource="notification.png"
+                 Order="Primary"
+                 Priority="0"
+                 Clicked="btnNotification_Clicked"/>
+</ContentPage.ToolbarItems>
+        <!--<Stepper Value="0" Minimum="0" Maximum="99" Increment="1" HorizontalOptions="Center" VerticalOptions="Center" ValueChanged="Stepper_ValueChanged" />-->
+    <ContentPage.Content>
+        <RefreshView IsRefreshing="{Binding IsRefreshing}" Command="{Binding RefreshViewCommand}" > 
+                <ScrollView x:Name="myScrollView">
+        <StackLayout Orientation="Vertical">
+
+             <StackLayout x:Name="layoutMain">
+        <StackLayout Orientation="Vertical">
+                 <Frame Padding="20,15,20,15">
+                    <StackLayout Orientation="Vertical">
+                        <Label x:Name="lblInfo" Text="Covid19 Overall Information" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" TextColor="Black" FontAttributes="Bold" FontSize="Large"/>
+                        <Label x:Name="lblUpdatedDate" Text="{ Binding Name}" VerticalOptions="EndAndExpand" HorizontalOptions="EndAndExpand" TextColor="Red" FontAttributes="Bold" FontSize="Micro"/>
+                    </StackLayout>
+                </Frame>
+                <Frame Padding="20,15,20,15">
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Total Cases" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand" TextColor="Black" FontAttributes="Bold" FontSize="Large" />
+                        <Label x:Name="lblTotalCases" Text="888,888,888,888" VerticalOptions="End" HorizontalOptions="EndAndExpand" TextColor="Black" FontAttributes="Bold" FontSize="Large" />
+                    </StackLayout>
+                </Frame>
+                <Frame Padding="20,10,20,10">
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Recovered Cases" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand" TextColor="Black" FontAttributes="Bold" FontSize="Large" />
+                        <Label x:Name="lblTotalRecovered" Text="888,888,888,888" VerticalOptions="End" HorizontalOptions="EndAndExpand" TextColor="Green" FontAttributes="Bold" FontSize="Large" />
+                    </StackLayout>
+                </Frame>
+                <Frame Padding="20,10,20,10">
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Active Cases" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand" TextColor="Black" FontAttributes="Bold" FontSize="Large" />
+                        <Label x:Name="lblActiveCases" Text="888,888,888,888" VerticalOptions="End" HorizontalOptions="EndAndExpand" TextColor="Blue" FontAttributes="Bold" FontSize="Large" />
+                    </StackLayout> 
+                </Frame>
+                <Frame Padding="20,15,20,15" Margin="0,10,0,0">
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Overall Death" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand" TextColor="Black" FontAttributes="Bold" FontSize="Large" />
+                        <Label x:Name="lblTotalDeath" Text="888,888,888,888" VerticalOptions="End" HorizontalOptions="EndAndExpand" TextColor="Red" FontAttributes="Bold" FontSize="Large" />
+                    </StackLayout>
+                </Frame>
+        </StackLayout>    
+        <StackLayout Orientation="Vertical" Margin="0,30,0,0">
+            
+                 <Frame Padding="20,15,20,15">
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Covid19 Today's Information" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" TextColor="Blue" FontAttributes="Bold" FontSize="Large"/>
+                    </StackLayout>
+                </Frame>
+                <Frame Padding="20,15,20,15">
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Today's Cases" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand" TextColor="Black" FontAttributes="Bold" FontSize="Large" />
+                        <Label x:Name="lblTodayCases" Text="888,888,888,888" VerticalOptions="End" HorizontalOptions="EndAndExpand" TextColor="Black" FontAttributes="Bold" FontSize="Large" />
+                    </StackLayout>
+                </Frame>
+                <Frame Padding="20,15,20,15">
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Today's Death" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand" TextColor="Black" FontAttributes="Bold" FontSize="Large" />
+                        <Label x:Name="lblTodayDeath" Text="888,888,888,888" VerticalOptions="End" HorizontalOptions="EndAndExpand" TextColor="Red" FontAttributes="Bold" FontSize="Large" />
+                    </StackLayout>
+                </Frame>
+                <Frame Padding="20,15,20,15">
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Affected Countries" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand" TextColor="Black" FontAttributes="Bold" FontSize="Large" />
+                        <Label x:Name="lblAffectedCountry" Text="888,888,888,888" VerticalOptions="End" HorizontalOptions="EndAndExpand" TextColor="Black" FontAttributes="Bold" FontSize="Large" />
+                    </StackLayout>
+                </Frame>
+        </StackLayout>
+            <StackLayout Orientation="Vertical">
+          
+            <Button x:Name="btnCountry"
+                    Text="Cases by Country"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    FontSize="24"
+                    BackgroundColor="LightBlue"
+                    Clicked="btnCountry_Clicked"></Button>
+            <!--<Button x:Name="btnFavourate"
+                    Text="Cases by Bookmarked Country"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    FontSize="20"
+                    BackgroundColor="AliceBlue"
+                    Clicked="btnFavourate_Clicked"></Button>-->
+            <Button x:Name="btnSource"
+                Text="View Sources"
+                    TextColor="Black"
+                    BackgroundColor="LightGray"
+                    Clicked="btnSource_Clicked"></Button>
+        </StackLayout>
+                 </StackLayout>
+
+            <StackLayout Orientation="Vertical"
+                     IsVisible="false"
+                     x:Name="layoutNoWifi">
+            <Image Source="nowifi.png"
+                   VerticalOptions="FillAndExpand"
+                   HorizontalOptions="FillAndExpand"></Image>
+        </StackLayout>
+
+        </StackLayout>
+    </ScrollView>
+        </RefreshView>
+    </ContentPage.Content>
+    
+</ContentPage>

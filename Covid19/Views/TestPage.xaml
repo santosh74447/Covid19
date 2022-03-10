@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Covid19.Views.TestPage">
+    <ContentPage.Content>
+
+    <StackLayout Orientation="Vertical">
+    <StackLayout Orientation="Vertical"
+                    x:Name="layoutMain">
+        <Frame Margin="0,0,0,0"
+               Padding="0,0,0,0">
+            <StackLayout Orientation="Horizontal" >
+                <Image Source="bmark.png"
+                    HeightRequest="20"
+                    WidthRequest="50"
+                    Margin="0,2,0,0"/>
+                <StackLayout Orientation="Vertical">
+                    <Label Text="88 new cases found in Nepal"
+                            FontAttributes="Bold"
+                           TextColor="Black"
+                            FontSize="Medium"
+                            VerticalOptions="CenterAndExpand"
+                            HorizontalOptions="Center">
+                            <Label.Margin>
+                            <OnPlatform x:TypeArguments="Thickness">
+                                <On Platform="iOS" Value="10,-10,-30,0" />
+                                <On Platform="android" Value="10,-8,-20,0"/>
+                            </OnPlatform>
+                            </Label.Margin>
+                    </Label>
+                    <Label x:Name="lblCreatedDate"
+                            Text="As of 8888/88/88 88:88:88 PM"
+                            HorizontalTextAlignment="End"
+                            VerticalTextAlignment="End"
+                            FontSize="10"
+                            Margin="0,0,0,0"/>
+                </StackLayout>
+            </StackLayout>
+                                
+        </Frame>
+        <Frame Margin="0,10,0,0">
+            <StackLayout Orientation="Horizontal" >
+                <Image Source="bmark.png"
+                    HeightRequest="20"
+                    WidthRequest="50"
+                    Margin="0,2,0,0"/>
+                <StackLayout Orientation="Vertical">
+                    <Label Text="88 new cases found in Nepal"
+                            FontAttributes="None"
+                           TextColor="Black"
+                            FontSize="Medium"
+                            VerticalOptions="CenterAndExpand"
+                            HorizontalOptions="Center">
+                            <Label.Margin>
+                            <OnPlatform x:TypeArguments="Thickness">
+                                <On Platform="iOS" Value="10,-10,-30,0" />
+                                <On Platform="android" Value="10,-8,-20,0"/>
+                            </OnPlatform>
+                            </Label.Margin>
+                    </Label>
+                    <Label 
+                            Text="As of 8888/88/88 88:88:88 PM"
+                            HorizontalTextAlignment="End"
+                            VerticalTextAlignment="End"
+                            HorizontalOptions="End"
+                            VerticalOptions="End"
+                            FontSize="Small"
+                            Margin="0,0,0,0"/>
+                </StackLayout>
+            </StackLayout>
+                                
+        </Frame>
+    </StackLayout>
+    <StackLayout Orientation="Vertical"
+                    IsVisible="false"
+                    x:Name="layoutNoWifi">
+        <Image Source="nowifi.png"
+                VerticalOptions="FillAndExpand"
+                HorizontalOptions="FillAndExpand"></Image>
+    </StackLayout>
+    </StackLayout>
+
+
+</ContentPage.Content>
+</ContentPage>

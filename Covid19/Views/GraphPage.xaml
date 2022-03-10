@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:microcharts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
+             x:Class="Covid19.Views.GraphPage"
+             Title="Graphical Representation">
+    <ContentPage.ToolbarItems>
+    <ToolbarItem Text="Share"
+                 x:Name="btnShare"
+                 IconImageSource="share.png"
+                 Order="Primary"
+                 Priority="0"
+                 Clicked="btnShare_Clicked"/>
+</ContentPage.ToolbarItems>
+    <ContentPage.Content>
+
+        <ScrollView>
+            <StackLayout Orientation="Vertical">
+                <StackLayout Orientation="Vertical"
+                      x:Name="layoutMain">
+             <microcharts:ChartView x:Name="Chart1"
+                               HeightRequest="130"/> 
+            <Label Text="New Cases over Last 10 Days"
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="CenterAndExpand"
+                   TextColor="Black"
+                    FontAttributes="Bold"/>
+
+                  <BoxView HeightRequest="2"
+                           Margin="0,0,0,10"
+                           BackgroundColor="Black"
+                           HorizontalOptions="FillAndExpand" />
+             <microcharts:ChartView x:Name="ChartDeath"
+                               HeightRequest="130"/> 
+            <Label Text="Death over Last 10 Days"
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="CenterAndExpand"
+                   TextColor="Black"
+                    FontAttributes="Bold"/>
+                  <BoxView HeightRequest="2"
+                           Margin="0,0,0,10"
+                           BackgroundColor="Black"
+                           HorizontalOptions="FillAndExpand" />
+             <microcharts:ChartView x:Name="ChartRecovered"
+                               HeightRequest="130"/> 
+            <Label Text="Recovered Cases over Last 10 Days"
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="CenterAndExpand"
+                   TextColor="Black"
+                    FontAttributes="Bold"/>
+                  <BoxView HeightRequest="2"
+                           Margin="0,0,0,10"
+                           BackgroundColor="Black"
+                           HorizontalOptions="FillAndExpand" />
+    </StackLayout>
+                <StackLayout Orientation="Vertical"
+                     IsVisible="false"
+                     x:Name="layoutNoWifi">
+            <Image Source="nowifi.png"
+                   VerticalOptions="FillAndExpand"
+                   HorizontalOptions="FillAndExpand"></Image>
+            
+        </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

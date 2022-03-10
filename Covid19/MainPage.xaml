@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" x:Class="Covid19.MainPage">
+   
+    <ContentPage.ToolbarItems>
+    <ToolbarItem Text="Share" x:Name="btnShare" IconImageSource="share.png" Order="Primary" Priority="0" Clicked="btnShare_Clicked"/>
+
+</ContentPage.ToolbarItems>
+    <ScrollView>
+        <StackLayout Orientation="Vertical">
+        <StackLayout Orientation="Vertical" x:Name="layoutMain">
+            <Frame>
+                <StackLayout Orientation="Vertical">
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Today's Information" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" FontSize="Large" FontAttributes="Bold" />
+                        <ImageButton Source="bmark.png" BackgroundColor="Transparent" x:Name="btnFavourate" Clicked="btnFavourate_Clicked" CommandParameter="{Binding countryModel}"/>
+                    </StackLayout>
+                        <BoxView HeightRequest="2" Margin="0,-10,0,10" BackgroundColor="Black" HorizontalOptions="FillAndExpand" />
+                    <StackLayout Orientation="Vertical">
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="New Cases" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand" TextColor="Black" FontAttributes="Bold" FontSize="Medium" />
+                        <Label x:Name="lblTodayCases" Text="{Binding SelectedSkills.todayCases}" VerticalOptions="End" HorizontalOptions="EndAndExpand" TextColor="Black" FontAttributes="Bold" FontSize="Medium" />
+                    
+                        <Label Text="New Death" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand" TextColor="Black" FontAttributes="Bold" FontSize="Medium" Margin="20,0,0,0"/>
+                        <Label x:Name="lblTodayDeath" Text="{Binding SelectedSkills.todayDeaths}" VerticalOptions="End" HorizontalOptions="EndAndExpand" TextColor="Red" FontAttributes="Bold" FontSize="Medium" />
+                    </StackLayout>
+                </StackLayout>
+
+        </StackLayout>
+            </Frame>
+            <Frame>
+                <StackLayout Orientation="Vertical">
+            <Label Text="Overall Information" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" FontSize="Large" FontAttributes="Bold"/>
+            <BoxView HeightRequest="2" Margin="0,-5,0,10" BackgroundColor="Black" HorizontalOptions="FillAndExpand" />
+             <StackLayout Orientation="Horizontal">
+                <Label Text="Total Cases" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand" TextColor="Black" FontAttributes="Bold" FontSize="Title"/>
+                <Label x:Name="lblTotalCases" Text="{Binding cases}" VerticalOptions="End" HorizontalOptions="EndAndExpand" TextColor="Black" FontAttributes="Bold" FontSize="Title" />
+             </StackLayout>   
+                <BoxView HeightRequest="1" Margin="0,-5,0,10" BackgroundColor="Black" HorizontalOptions="FillAndExpand" />
+
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Recovered" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand" TextColor="Black" FontAttributes="Bold" FontSize="Large" />
+                        <Label x:Name="lblTotalRecovered" Text="{Binding recovered}" VerticalOptions="End" HorizontalOptions="EndAndExpand" TextColor="Green" FontAttributes="Bold" FontSize="Large" />
+                    </StackLayout>
+                        <BoxView HeightRequest="1" Margin="0,-5,0,10" BackgroundColor="Black" HorizontalOptions="FillAndExpand" />
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Deaths" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand" TextColor="Black" FontAttributes="Bold" FontSize="Large" />
+                        <Label x:Name="lblTotalDeath" Text="{Binding deaths}" VerticalOptions="End" HorizontalOptions="EndAndExpand" TextColor="Red" FontAttributes="Bold" FontSize="Large" />
+                    </StackLayout>
+                        <BoxView HeightRequest="1" Margin="0,-5,0,10" BackgroundColor="Black" HorizontalOptions="FillAndExpand" />
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Active Cases" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand" TextColor="Black" FontAttributes="Bold" FontSize="Large" />
+                        <Label x:Name="lblActiveCases" Text="{Binding active}" VerticalOptions="End" HorizontalOptions="EndAndExpand" TextColor="Black" FontAttributes="Bold" FontSize="Large" />
+                    </StackLayout>
+                        <BoxView HeightRequest="1" Margin="0,-5,0,10" BackgroundColor="Black" HorizontalOptions="FillAndExpand" />
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Critical Cases" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand" TextColor="Black" FontAttributes="Bold" FontSize="Large"/>
+                        <Label x:Name="lblCriticalCases" Text="{Binding critical}" VerticalOptions="End" HorizontalOptions="EndAndExpand" TextColor="Red" FontAttributes="Bold" FontSize="Large" />
+                    </StackLayout>            
+                        <BoxView HeightRequest="1" Margin="0,-5,0,10" BackgroundColor="Black" HorizontalOptions="FillAndExpand" />
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Cases per One Million" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand" TextColor="Black" FontAttributes="Bold" FontSize="Large" />
+                        <Label x:Name="lblCasesPerMillion" Text="{Binding casesPerOneMillion}" VerticalOptions="End" HorizontalOptions="EndAndExpand" TextColor="Black" FontAttributes="Bold" FontSize="Large" />
+                    </StackLayout>            
+                        <BoxView HeightRequest="1" Margin="0,-5,0,10" BackgroundColor="Black" HorizontalOptions="FillAndExpand" />
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Deaths Per One Million" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand" TextColor="Black" FontAttributes="Bold" FontSize="Large" />
+                        <Label x:Name="lblDeathPerMillion" Text="{Binding deathsPerOneMillion}" VerticalOptions="End" HorizontalOptions="EndAndExpand" TextColor="Red" FontAttributes="Bold" FontSize="Large" />
+                    </StackLayout>            
+                        <BoxView HeightRequest="1" Margin="0,-5,0,10" BackgroundColor="Black" HorizontalOptions="FillAndExpand" />
+
+                        <Label x:Name="lblUpdatedDate" Text="Data as of 8888/88/88 " VerticalOptions="EndAndExpand" HorizontalOptions="EndAndExpand" TextColor="Black" FontAttributes="Bold" FontSize="Micro"/>
+
+        </StackLayout>
+            </Frame>
+                <Button x:Name="btnHistory" Text="View History" TextColor="Black" FontAttributes="Bold" FontSize="24" BackgroundColor="LightBlue" Clicked="btnHistory_Clicked"></Button>
+                <Button x:Name="btnSource" Text="View Sources" TextColor="Black" BackgroundColor="LightGray" Clicked="btnSource_Clicked"></Button>
+        </StackLayout>
+
+        <StackLayout Orientation="Vertical" IsVisible="false" x:Name="layoutNoWifi">
+                <Image Source="nowifi.png" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"></Image>
+        </StackLayout>
+        </StackLayout>
+        </ScrollView>
+</ContentPage>

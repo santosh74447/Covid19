@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<pages:PopupPage
+ xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Covid19.Views.DefaultCountry">
+   <StackLayout Margin="20,60,20,10" BackgroundColor="Transparent">
+     
+  <ScrollView>
+    <AbsoluteLayout>
+       <StackLayout Orientation="Vertical" BackgroundColor="White"
+                      x:Name="layoutMain">
+            <Frame>
+            <StackLayout Orientation="Vertical">
+            <Entry x:Name="txtSearch"
+                Placeholder="Search"
+                   HeightRequest="50"
+                   Margin="0,-10,0,-10"
+                   Keyboard="Chat"
+                   TextChanged="txtSearch_TextChanged"/>
+        </StackLayout>
+            </Frame>
+                <ListView x:Name="SkillsListView"
+                    ItemsSource="{Binding collectionSkills}" HasUnevenRows="True" IsPullToRefreshEnabled="True" 
+                  IsRefreshing="{Binding IsRefreshing}" RefreshCommand="{Binding RefreshData}"
+                          SelectedItem="{Binding SelectedSkills, Mode=TwoWay}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                             <Frame Margin="0,10,0,0" Padding="0,0,0,0">
+                                    <Label Text="{Binding country}"
+                                           FontSize="Large"
+                                        FontAttributes="Bold"
+                                        VerticalOptions="CenterAndExpand"
+                                        HorizontalOptions="Center"
+                                        >
+                                        <Label.Margin>
+                                             <OnPlatform x:TypeArguments="Thickness">
+                    <On Platform="iOS" Value="10,-10,0,0" />
+                    <On Platform="android" Value="10,-8,0,0"/>
+                </OnPlatform>
+                                        </Label.Margin>
+                                    </Label>
+                                
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+      <ContentView
+          AbsoluteLayout.LayoutFlags="PositionProportional"
+          AbsoluteLayout.LayoutBounds="1, 0, -1, -1">
+        <ContentView.GestureRecognizers>
+          <TapGestureRecognizer Tapped="OnCloseButtonTapped"/>
+        </ContentView.GestureRecognizers>
+        <Image
+          x:Name="CloseImage"
+          HeightRequest="30"
+          WidthRequest="30">
+          <Image.Source>
+            <OnPlatform
+              x:TypeArguments="ImageSource"
+              Android="close.png"
+              iOS="close.png"/>
+          </Image.Source>
+        </Image>
+      </ContentView>
+    </AbsoluteLayout>
+  </ScrollView>
+    </StackLayout>
+</pages:PopupPage>
