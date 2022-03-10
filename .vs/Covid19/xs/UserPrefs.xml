@@ -1,0 +1,24 @@
+﻿<Properties StartupConfiguration="{25FAEB5A-6ECE-4E7E-A9A6-71853AB536B7}|Default">
+  <MonoDevelop.Ide.Workbench>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Covid19" expanded="True">
+            <Node name="Covid19.iOS" selected="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.Covid19.Android PreferredExecutionTarget="Android.Android_Accelerated_Oreo" />
+  <MonoDevelop.Ide.ItemProperties.Covid19.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.D4246216-000F-4829-ABFB-E9FFE4D85D15" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
+    <Watch file="../../../../../../../Volumes/Academics/XamProjects/Covid19/Covid19/Models/NotificationPageModel.cs" line="14" column="8" endLine="14" endColumn="47" offsetX="-1" offsetY="-1" expression="NotificationId" liveUpdate="False" />
+    <Watch file="../../../../../../../Volumes/Academics/XamProjects/Covid19/Covid19/Models/NotificationPageModel.cs" line="23" column="20" endLine="23" endColumn="27" offsetX="-1" offsetY="-1" expression="_isRead" liveUpdate="False" />
+  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
