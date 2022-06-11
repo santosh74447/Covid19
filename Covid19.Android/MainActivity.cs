@@ -25,7 +25,7 @@ namespace Covid19.Droid
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-            Rg.Plugins.Popup.Popup.Init(this, savedInstanceState);
+            //Rg.Plugins.Popup.Popup.Init(this, savedInstanceState);
             OneSignal.Current.StartInit("255da912-725f-46ad-80eb-e2fc3d6505f7")
                   .EndInit();
             LoadApplication(new App());
